@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "PriceAnalyst Helper",
+  "version": "1.0.0",
+  "description": "Добавляй товары в PriceAnalyst одним кликом с Wildberries и Ozon",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": [
+    "https://*.wildberries.ru/*",
+    "https://*.ozon.ru/*",
+    "http://localhost:4000/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Добавить в PriceAnalyst"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.wildberries.ru/*", "https://*.ozon.ru/*"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  }
+}

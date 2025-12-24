@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      width: 320px;
+      padding: 20px;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .logo {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 12px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    h1 {
+      font-size: 18px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 4px;
+    }
+    .subtitle {
+      color: #64748b;
+      font-size: 14px;
+    }
+    .add-btn {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: 16px;
+    }
+    .add-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    }
+    .status {
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .status.success {
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+    }
+    .status.error {
+      background: #fef2f2;
+      color: #dc2626;
+      border: 1px solid #fecaca;
+    }
+    .info {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 16px;
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.5;
+    }
+    .markets {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 12px;
+    }
+    .market {
+      padding: 4px 8px;
+      background: rgba(102, 126, 234, 0.2);
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">💰</div>
+    <h1>PriceAnalyst</h1>
+    <div class="subtitle">Добавь товар в мониторинг</div>
+  </div>
+
+  <div id="status" class="status" style="display: none;"></div>
+
+  <button id="addBtn" class="add-btn">
+    ✨ Добавить товар в отслеживание
+  </button>
+
+  <div class="info">
+    <div>Поддерживаемые площадки:</div>
+    <div class="markets">
+      <span class="market">Wildberries</span>
+      <span class="market">Ozon</span>
+    </div>
+    <div style="margin-top: 12px; font-size: 12px;">
+      Открой страницу товара и нажми на иконку расширения
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
