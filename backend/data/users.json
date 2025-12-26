@@ -1,0 +1,81 @@
+{
+  "users": {
+    "demo-user": {
+      "id": "demo-user",
+      "name": "Демо пользователь",
+      "products": [
+        {
+          "id": "1766784725703",
+          "name": "Масло сливочное \"Традиционное\" 82,5% 175 г Село Зеленое, фольга купить на OZON по низкой цене (355402652)",
+          "marketplace": "Ozon",
+          "url": "https://www.ozon.ru/product/maslo-slivochnoe-traditsionnoe-82-5-175-g-selo-zelenoe-folga-355402652/?ectx=1&miniapp=supermarket",
+          "currentPrice": 179,
+          "previousPrice": 179,
+          "changePercent": 0,
+          "trend": "stable",
+          "addedAt": "2025-12-26T21:32:05.703Z"
+        },
+        {
+          "id": "1766784431047",
+          "name": "музыкальный антистресс гарри поттер/музыкальный антистресс/musical fidget купить на OZON по низкой цене (3142468222)",
+          "marketplace": "Ozon",
+          "currentPrice": 300,
+          "previousPrice": 330,
+          "changePercent": 0,
+          "url": "https://www.ozon.ru/product/muzykalnyy-antistress-garri-potter-muzykalnyy-antistress-musical-fidget-3142468222/?at=28t0zn4lQULOg4llT4kgp5GiwzxX71IB6okEZil7G1DE",
+          "addedAt": "2025-12-26T21:27:11.047Z"
+        },
+        {
+          "id": "1766783667644",
+          "name": "Кубик-конструктор антистресс Mi Colorful Fidget Cube Blind Box купить на OZON по низкой цене (178680698)",
+          "marketplace": "Ozon",
+          "currentPrice": 497,
+          "previousPrice": 498,
+          "changePercent": "-0.2",
+          "url": "https://www.ozon.ru/product/kubik-konstruktor-antistress-mi-colorful-fidget-cube-blind-box-178680698/?at=OgtEmqgRkuEopLwNFoJNJzOCEJqj0xH9ZOxEJHV6xGJ7",
+          "addedAt": "2025-12-26T21:14:27.644Z",
+          "trend": "down",
+          "updatedAt": "2025-12-26T21:22:44.678Z"
+        },
+        {
+          "id": "1766783482001",
+          "name": "Повербанк 75000 mah, power bank с быстрой зарядкой Hocо 263789925 купить за 5 165 ₽ в интернет‑магазине Wildberries",
+          "marketplace": "Wildberries",
+          "currentPrice": 5165,
+          "previousPrice": 5681.500000000001,
+          "changePercent": 0,
+          "url": "https://www.wildberries.ru/catalog/263789925/detail.aspx",
+          "addedAt": "2025-12-26T21:11:22.001Z"
+        },
+        {
+          "id": "1766781452332",
+          "name": "Тестовый товар",
+          "marketplace": "Ozon",
+          "currentPrice": 5000,
+          "url": "test.com",
+          "addedAt": "2025-12-26T20:37:32.332Z"
+        },
+        {
+          "id": "1",
+          "name": "Apple AirPods Pro 2",
+          "marketplace": "Wildberries",
+          "url": "https://www.wildberries.ru/catalog/12345678",
+          "currentPrice": 19990,
+          "previousPrice": 22990,
+          "changePercent": -13.1,
+          "addedAt": "2025-12-26T10:00:00Z"
+        },
+        {
+          "id": "2",
+          "name": "Samsung Galaxy S24 Ultra",
+          "marketplace": "Ozon",
+          "url": "https://www.ozon.ru/product/98765432",
+          "currentPrice": 89990,
+          "previousPrice": 94990,
+          "changePercent": -5.3,
+          "addedAt": "2025-12-26T11:00:00Z"
+        }
+      ]
+    }
+  }
+}

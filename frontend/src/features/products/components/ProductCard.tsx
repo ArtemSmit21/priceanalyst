@@ -16,7 +16,6 @@ interface ProductCardProps {
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  // ЗАЩИТА ОТ undefined
   const currentPrice = product.currentPrice || 0;
   const previousPrice = product.previousPrice || 0;
   const changePercent = product.changePercent || 0;
