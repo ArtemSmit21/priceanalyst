@@ -1,7 +1,17 @@
 import React from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 
-export const Layout: React.FC = () => {
+interface User {
+  username: string;
+}
+
+interface LayoutProps {
+  user: User | null;
+  onLogout: () => void;
+  children?: React.ReactNode;
+}
+
+export const Layout: React.FC<LayoutProps> = ({ user, onLogout }) => {
   const location = useLocation();
 
   return (
@@ -50,7 +60,28 @@ export const Layout: React.FC = () => {
               </NavLink>
             </nav>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
+              {user ? (
+                <>
+                  <span className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm px-4 py-2 rounded-2xl border border-blue-200/50 text-sm font-semibold text-blue-800 hidden md:block">
+                    👋 {user.username}
+                  </span>
+                  <button
+                    onClick={onLogout}
+                    className="px-5 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-2xl shadow-lg hover:from-red-600 hover:to-red-700 shadow-red-500/25 hover:shadow-red-500/40 transition-all duration-200 text-sm hidden md:block"
+                  >
+                    🚪 Выйти
+                  </button>
+                </>
+              ) : (
+                <Link
+                  to="/login"
+                  className="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-2xl shadow-lg hover:from-blue-700 hover:to-blue-800 shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-200 text-sm hidden md:block"
+                >
+                  Войти
+                </Link>
+              )}
+
               <Link
                 to="/compare"
                 className="p-2 text-gray-600 hover:text-primary-700 hover:bg-primary-100 rounded-xl transition-all duration-200 md:hidden"
@@ -60,6 +91,30 @@ export const Layout: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
                 </svg>
               </Link>
+
+              {/* Мобильное меню */}
+              <div className="md:hidden flex items-center gap-2">
+                {user ? (
+                  <>
+                    <span className="text-xs font-semibold text-blue-800">{user.username}</span>
+                    <button
+                      onClick={onLogout}
+                      className="p-2 text-red-500 hover:bg-red-50 rounded-xl"
+                      title="Выйти"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7" />
+                      </svg>
+                    </button>
+                  </>
+                ) : (
+                  <Link to="/login" className="p-2 text-blue-600 hover:bg-blue-50 rounded-xl" title="Войти">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                    </svg>
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -86,7 +141,7 @@ export const Layout: React.FC = () => {
             </div>
           </div>
           <div className="border-t border-gray-200/50 mt-8 pt-6 text-xs text-gray-500">
-            <p>&copy; 2025 PriceAnalyst. Все права защищены. Сделано с ❤️ в России.</p>
+            <p>© 2025 PriceAnalyst. Все права защищены.</p>
           </div>
         </div>
       </footer>

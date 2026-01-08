@@ -1,14 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <style>
+    * { box-sizing: border-box; }
+    body { 
+      width: 380px !important; 
+      min-width: 380px !important; 
+      max-width: 380px !important;
+      padding: 20px; 
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+      color: white;
+    }
+    h2 { margin: 0 0 20px 0; font-size: 20px; font-weight: 700; }
+    #user-input { 
+      width: 100%; 
+      max-width: 100%; 
+      padding: 14px 16px; 
+      border: none; 
+      border-radius: 12px; 
+      font-size: 16px; 
+      background: rgba(255,255,255,0.2); 
+      backdrop-filter: blur(10px); 
+      color: white; 
+      margin-bottom: 10px;
+    }
+    #user-input::placeholder { color: rgba(255,255,255,0.7); }
+    #user-input:focus { outline: none; box-shadow: 0 0 0 3px rgba(255,255,255,0.3); }
+    #add-btn { 
+      width: 100%; 
+      max-width: 100%;
+      padding: 14px; 
+      border: none; 
+      border-radius: 12px; 
+      font-size: 16px; 
+      font-weight: 600; 
+      cursor: pointer; 
+      margin-top: 10px; 
+      background: rgba(59,130,246,0.9); 
+      color: white; 
+      display: none;
+    }
+    #add-btn:hover:not(:disabled) { background: rgba(59,130,246,1); }
+    #add-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    #status { 
+      min-height: 90px; 
+      padding: 16px; 
+      border-radius: 12px; 
+      background: rgba(255,255,255,0.15); 
+      backdrop-filter: blur(10px); 
+      margin: 15px 0; 
+      font-size: 15px; 
+      line-height: 1.5; 
+    }
+    .price { font-size: 24px; font-weight: 800; margin: 5px 0; }
+    .marketplace { font-size: 16px; opacity: 0.9; }
+  </style>
 </head>
-<body style="width:350px;padding:20px;font-family:system-ui,-apple-system,sans-serif;">
-  <h3 style="margin:0 0 15px 0;color:#1f2937;">🎯 PriceAnalyst</h3>
-  <div id="status" style="background:#f3f4f6;padding:15px;border-radius:8px;font-size:14px;line-height:1.4;color:#6b7280;">🔍 Ищем цену на странице...</div>
-  <button id="add" style="width:100%;padding:12px;background:linear-gradient(135deg,#10b981,#059669);color:white;border:none;border-radius:8px;font-weight:600;cursor:pointer;margin-top:15px;display:none;font-size:16px;">
-    ➕ Добавить в трекинг
-  </button>
+<body>
+  <h2>➕ Добавить в PriceAnalyst</h2>
+  
+  <input id="user-input" type="text" placeholder="Логин (Artem) → Enter">
+  
+  <div id="status">⏳ Ждем загрузки страницы...</div>
+  <button id="add-btn">✅ Сохранить товар</button>
+  
   <script src="popup.js"></script>
 </body>
 </html>
